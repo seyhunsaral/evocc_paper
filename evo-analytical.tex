@@ -1,0 +1,223 @@
+
+\section{Analytical Results}
+\textbf{This part was intended to take place in the chapter of Evolution of Conditional Cooperation}\\
+In this section we further investigate the payoffs of the successful types of the simulations in an analytical framework. First let us describe how agents look at how agents interact. 
+
+When two conditional strategies start to interact, the course of interaction depends on the initial move. To demonstrate lets take a look at the interaction of two perfect conditionally cooperator types that differ in their initial move: $M-LLH$ and $H-LLH$. To simplify, we will call the first strategy as ``cautious conditional cooperator'' and the second one ``generous conditional cooperator''. If the cautious type is the first mover, it starts with the strategy $M$. The response of generous type will be $L$ and they further will continue playing $L$ as long as the game continues. However if the generous type is the first mover, then the interaction starts with $H$ and the cautious type will respond with $H$ and the as the interaction goes on, both players will play $H$. As it can be seen those two types as they interact, at a certain point the strategies will go into a repetition (proof needed). This repetition can be either the same strategy as it is the case for both initial moves in our demonstration (either $L$,$L$,$L$) or it can be a cycle with different strategies played repeatedly. We will call this cycling path as the ``engagement cycle'', and the interaction happening before it starts to repeat as ``handshake interactions''. In order to calculate the total payoffs from the interaction, we need to calculate the handshake payoffs and engagement payoffs separately. 
+
+Lets assume that both agents always cooperate in their engagement cycle and they start with cooperation. Therefore there are no handshake interaction. So the history of the game will be as the following: 
+\begin{table}[H]
+\begin{center}
+
+\begin{tabular}{lccccc}
+Player 1 & H &   & H &   & ... \\
+Player 2 &  & H &   & H  & ...\\
+\end{tabular}
+
+\end{center}
+\end{table}
+then the payoffs will be;
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{lccccc}
+Player 1 & -c & b  & -c & b & ...\\
+Player 2 & b & -c & b  & -c  & ...\\
+\end{tabular}
+\end{center}
+\end{table}
+In that case the expected payoff for player 1 is:
+
+\begin{align*}
+E[\pi] &= \delta^0(-c)+\delta^1b+\delta^2(-c)+\delta^3b+\dots \\
+       &= (-c)(\delta^0+\delta^2+\dots) + b(\delta^1+\delta^3+\dots) \\
+       &= (-c) \sum_{t=0}^{\infty}\delta^{2t} + b \sum_{t=0}^{\infty}\delta^{2t+1}  \\
+       &= \frac{(-c)}{1-\delta^2} + \frac{\delta b}{1-\delta^2}=\frac{(-c)+\delta b}{1-\delta^2}.
+\end{align*}
+
+The generalization is as follows: if the interaction leads us to a cycle length of four after the  $i$\textsuperscript{th} interaction,i.e. when $i$ is the size of handshake periods, and the cycle payoffs are  $a,b,c,d$ respectively, then the expected payoff from the engagement cycle for the agent would be (proof needed?):
+$$E[\pi_E]=a\sum_{t=0}^{\infty}\delta^{4t+i}+b\sum_{t=0}^{\infty}\delta^{4t+i+1}+c\sum_{t=0}^{\infty}\delta^{4t+i+2}+d\sum_{t=0}^{\infty}\delta^{4t+i+3}$$
+$$=\frac{a\delta^i+b\delta^{i+1}+c\delta^{i+2}+c\delta^{i+4}}{1-\delta^{i+4}}$$  
+
+And if the engagement cycle gives the agent to the a sequence of the payoffs such as  $(x_0,x_1,\dots,x_n)$ after $i$ interactions, the expected payoff will be:
+$$E[\pi_E]=\frac{\sum_{j=0}^{n}x_j\delta^{j+i}}{1-\delta^{n+1}}$$
+
+The calculation of the expected payoffs for the handshake interactions is rather trivial. We find the path of the handshake and discound the payoffs with the delta. Then the expected payoff for an interactin will be $E[\pi] = E[\pi_H] + E[\pi_E]$.
+
+Now we take the successful stategies and find their handshake moves and engagement cycles.
+
+
+\newcommand{\me}{\textsuperscript}
+\newcommand{\ot}{\textsubscript}
+\newcommand{\no}{$\varnothing$}
+
+
+% Payoff L-LLL
+\begin{table}[H]
+\setlength{\extrarowheight}{2pt}	\resizebox{1\textwidth}{!}{
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{@{}cc|cccc|cccc|c@{}}
+%\toprule
+         &         & \multicolumn{4}{c|}{First Mover} & \multicolumn{4}{c|}{Second Mover} &                                                                                                                                                                                       \\ \midrule
+   Type  & Against & Hands.                           & Eng.cyc.                          & $\pi_H$ & $\pi_E$                     & Hands. & Eng.cyc.      & $\pi_H$ & $\pi_E$                              & $\pi_T$                                                             \\ \midrule
+   L-LLL & L-LLL   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no    & \ot{L} \me{L} & -       & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                          \\
+   L-LLL & L-LLM   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no    & \ot{L} \me{L} & -       & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                          \\
+   L-LLL & L-LLH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no    & \ot{L} \me{L} & -       & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                          \\ 
+   L-LLL & L-LML   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no    & \ot{L} \me{L} & -       & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                          \\ 
+   L-LLL & M-LML   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{M} & \me{L} \ot{L} & $b/2$   & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$   \\ 
+   L-LLL & M-LMM   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{M} & \me{L} \ot{L} & $b/2$   & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$   \\
+   L-LLL & H-LLH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{H} & \me{L} \ot{L} & $b$     & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(b             + \frac{\omega}{1-\delta}\Big)$ \\
+   L-LLL & H-LMH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{H} & \me{L} \ot{L} & $b$     & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(b             + \frac{\omega}{1-\delta}\Big)$ \\
+
+   \bottomrule
+\end{tabular}
+}
+\caption{Interaction of type L-LLL and the relevant payoffs}
+\label{tbl:evo-payoffL-LLL}
+\end{table}
+
+
+% Payoff L-LLM
+\begin{table}[H]
+\setlength{\extrarowheight}{2pt}	\resizebox{1\textwidth}{!}{
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{@{}cc|cccc|cccc|c@{}}
+%\toprule
+         &         & \multicolumn{4}{c|}{First Mover} & \multicolumn{4}{c|}{Second Mover} &                                                                                                                                                                                                                                                              \\ \midrule
+   Type  & Against & Hands.                           & Eng.cyc.                          & $\pi_H$ & $\pi_E$                     & Hands.        & Eng.cyc.      & $\pi_H$                   & $\pi_E$                              & $\pi_T$                                                                                                           \\ \midrule
+   L-LLM & L-LLL   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & .                         & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                                                                        \\
+   L-LLM & L-LLM   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & .                         & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                                                                        \\
+   L-LLM & L-LLH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & .                         & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                                                                        \\ 
+   L-LLM & L-LML   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & .                         & $\frac{\omega \delta}{1-\delta^2}$   & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$                                                                        \\ 
+   L-LLM & M-LML   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{M}        & \me{L} \ot{L} & $b/2$                     & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$                                                 \\
+   L-LLM & M-LMM   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{M}        & \me{L} \ot{L} & $b/2$                     & $\frac{\omega \delta^2}{1-\delta^2}$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$                                                 \\
+   L-LLM & H-LLH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{H} \me{M} & \ot{L} \me{L} & $b - \delta \frac{c}{2} $ & $\frac{\omega \delta^3}{1-\delta^2}$ & $\frac{1}{2} \Big(b - \delta \frac{c}{2} + \frac{\omega}{1-\delta^3} + \frac{\omega \delta^3}{1-\delta^2}  \Big)$ \\
+   L-LLM & H-LMH   & \no                              & \me{L} \ot{L}                     & -       & $\frac{\omega}{1-\delta^2}$ & \ot{H} \me{M} & \me{L} \ot{L} & $b - \delta \frac{c}{2} $ & $\frac{\omega \delta^3}{1-\delta^2}$ & $\frac{1}{2} \Big(b - \delta \frac{c}{2} + \frac{\omega}{1-\delta^3} + \frac{\omega \delta^3}{1-\delta^2}  \Big)$ \\
+ \bottomrule
+\end{tabular}
+}
+\caption{Interaction of type L-LLM and the relevant payoffs}
+\label{tbl:evo-payoffL-LLM}
+\end{table}
+
+
+
+
+% Payoff L-LML
+\begin{table}[]
+\setlength{\extrarowheight}{2pt}	\resizebox{1\textwidth}{!}{
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{@{}cc|cccc|cccc|c@{}}
+%\toprule
+         &         & \multicolumn{4}{c|}{First Mover} & \multicolumn{4}{c|}{Second Mover} &                                                                                                                                                                                                                                                              \\ \midrule
+   Type  & Against & Hands.                           & Eng.cyc.                          & $\pi_H$ & $\pi_E$                     & Hands.        & Eng.cyc.      & $\pi_H$                   & $\pi_E$                              & $\pi_T$                                                                                                           \\ \midrule
+   L-LML & L-LLL   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & - & $\frac{\omega \delta}{1-\delta^2}$ & - \\
+   L-LML & L-LLM   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & - & $\frac{\omega \delta}{1-\delta^2}$ & - \\
+   L-LML & L-LLH   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & - & $\frac{\omega \delta}{1-\delta^2}$ & - \\ 
+   L-LML & L-LML   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{L} \me{L} & - & $\frac{\omega \delta}{1-\delta^2}$ & - \\ 
+   L-LML & M-LML   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{M} \me{M} & - & - & - \\ 
+   L-LML & M-LMM   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \no           & \ot{M} \me{M} & - & - & - \\ 
+   L-LML & H-LLH   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \ot{H}        & \me{L} \ot{L} & b & - & - \\ 
+   L-LML & H-LMH   & \no                              & \me{L} \ot{L} & - & $\frac{\omega}{1-\delta^2}$ & \ot{H}        & \me{L} \ot{L} & b & - & - \\ 
+ \bottomrule
+\end{tabular}
+}
+\caption{Interaction of type L-LML and the relevant payoffs}
+\label{tbl:evo-payoffL-LML}
+\end{table}
+
+
+
+
+%%% I WAS HERE
+
+\begin{table}[H]
+\setlength{\extrarowheight}{2pt}	\resizebox{0.7\textwidth}{!}{
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{@{}cc|cc|cc@{}}
+%\toprule
+         &         & \multicolumn{2}{c|}{First Mover} & \multicolumn{2}{c}{Second Mover}              \\ \midrule
+   Type  & Against & Hands.                           & Eng.cyc.      & Hands.        & Eng.cyc.      \\ \midrule
+   L-LML & L-LLL   & \no                              & \me{L} \ot{L} & \no           & \ot{L} \me{L} \\
+   L-LML & L-LLM   & \no                              & \me{L} \ot{L} & \no           & \ot{L} \me{L} \\
+   L-LML & L-LLH   & \no                              & \me{L} \ot{L} & \no           & \ot{L} \me{L} \\ 
+   L-LML & L-LML   & \no                              & \me{L} \ot{L} & \no           & \ot{L} \me{L} \\ 
+   L-LML & M-LML   & \no                              & \me{L} \ot{L} & \no           & \ot{M} \me{M} \\ 
+   L-LML & M-LMM   & \no                              & \me{L} \ot{L} & \no           & \ot{M} \me{M} \\ 
+   L-LML & H-LLH   & \no                              & \me{L} \ot{L} & \ot{H}        & \me{L} \ot{L} \\ 
+   L-LML & H-LMH   & \no                              & \me{L} \ot{L} & \ot{H}        & \me{L} \ot{L} \\ 
+\midrule     
+   M-LML & L-LLL   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\
+   M-LML & L-LLM   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\
+   M-LML & L-LLH   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\ 
+   M-LML & L-LML   & \no                              & \me{M} \ot{M} & \no           & \ot{L} \me{L} \\ 
+   M-LML & M-LML   & \no                              & \me{M} \ot{M} & \no           & \ot{M} \me{M} \\ 
+   M-LML & M-LMM   & \no                              & \me{M} \ot{M} & \no           & \ot{M} \me{M} \\ 
+   M-LML & H-LLH   & \me{M}                           & \ot{L} \me{L} & \ot{H}        & \me{L} \ot{L} \\ 
+   M-LML & H-LMH   & \no                              & \me{M} \ot{M} & \ot{H}        & \me{L} \ot{L} \\ 
+\midrule
+   M-LMM & L-LLL   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\
+   M-LMM & L-LLM   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\
+   M-LMM & L-LLH   & \me{M}                           & \ot{L} \me{L} & \no           & \ot{L} \me{L} \\ 
+   M-LMM & L-LML   & \no                              & \me{M} \ot{M} & \no           & \ot{L} \me{L} \\ 
+   M-LMM & M-LML   & \no                              & \me{M} \ot{M} & \no           & \ot{M} \me{M} \\ 
+   M-LMM & M-LMM   & \no                              & \me{M} \ot{M} & \no           & \ot{M} \me{M} \\ 
+   M-LMM & H-LLH   & \me{M}                           & \ot{L} \me{L} & \ot{H} \me{M} & \ot{L} \me{L} \\ 
+   M-LMM & H-LMH   & \no                              & \me{M} \ot{M} & \ot{H}        & \me{M} \ot{M} \\ 
+ \bottomrule
+\end{tabular}
+}
+\end{table}
+
+
+\begin{table}[H]
+\setlength{\extrarowheight}{2pt}	\resizebox{0.7\textwidth}{!}{
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{@{}cc|cc|cc@{}}
+%\toprule
+         &         & \multicolumn{2}{c|}{First Mover} & \multicolumn{2}{c}{Second Mover}       \\ \midrule
+   Type  & Against & Hands.                           & Eng.cyc.      & Hands. & Eng.cyc.      \\ \midrule
+   H-LLH & L-LLL   & \me{H}                           & \ot{L} \me{L} & \no    & \ot{L} \me{L} \\
+   H-LLH & L-LLM   & \me{H} \ot{M}                    & \me{L} \ot{L} & \no    & \ot{L} \me{L} \\
+   H-LLH & L-LLH   & \no                              & \me{H} \ot{H} & \no    & \ot{L} \me{L} \\ 
+   H-LLH & L-LML   & \me{H}                           & \ot{L} \me{L} & \no    & \ot{L} \me{L} \\ 
+   H-LLH & M-LML   & \me{H}                           & \ot{L} \me{L} & \ot{M} & \me{L} \ot{L} \\ 
+   H-LLH & M-LMM   & \me{H} \ot{M}                    & \me{L} \ot{L} & \ot{M} & \me{L} \ot{L} \\ 
+   H-LLH & H-LLH   & \no                              & \me{H} \ot{H} & \no    & \me{H} \ot{H} \\ 
+   H-LLH & H-LMH   & \no                              & \me{H} \ot{H} & \no    & \me{H} \ot{H} \\ 
+\midrule     
+   H-LMH & L-LLL   & \me{H}                           & \ot{L} \me{L} & \no    & \ot{L} \me{L} \\
+   H-LMH & L-LLM   & \me{H} \ot{M}                    & \me{L} \ot{L} & \no    & \ot{L} \me{L} \\
+   H-LMH & L-LLH   & \no                              & \me{H} \ot{H} & \no    & \ot{L} \me{L} \\ 
+   H-LMH & L-LML   & \me{H}                           & \ot{L} \me{L} & \no    & \ot{L} \me{L} \\ 
+   H-LMH & M-LML   & \me{H}                           & \ot{L} \me{L} & \no    & \ot{M} \me{M} \\ 
+   H-LMH & M-LMM   & \me{H}                           & \ot{M} \me{M} & \no    & \ot{M} \me{M} \\ 
+   H-LMH & H-LLH   & \no                              & \me{H} \ot{H} & \no    & \me{H} \ot{H} \\ 
+   H-LMH & H-LMH   & \no                              & \me{H} \ot{H} & \no    & \me{H} \ot{H} \\ 
+
+
+
+ \bottomrule
+\end{tabular}
+}
+\end{table}
+
+\begin{sidewaystable}[H] % <-- HERE
+\centering
+\def\arraystretch{2}%  1 
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|C{1.5cm}| C{4cm}|C{4cm}|C{4cm}|C{4cm}|C{4cm}|C{4cm}|C{4cm}|C{4cm}| }\hline
+       & L-LLL & L-LLM & L-LLH & L-LML & M-LML & M-LMM & H-LLH & H-LMH \\ \hline 
+L-LLL  & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$  & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$  &
+$\frac{1}{2}\cdot\Big(b             + \frac{\omega}{1-\delta}\Big)$ & $\frac{1}{2}\cdot\Big(b             + \frac{\omega}{1-\delta}\Big)$ \\
+ L-LLM & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot \frac{\omega}{1-\delta}$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$ & $\frac{1}{2}\cdot\Big(\frac{b}{2} + \frac{\omega}{1-\delta}\Big)$ & $\frac{1}{2} \Big(b - \delta \frac{c}{2} + \frac{\omega}{1-\delta^3} + \frac{\omega \delta^3}{1-\delta^2}  \Big)$ & $\frac{1}{2} \Big(b - \delta \frac{c}{2} + \frac{\omega}{1-\delta^3} + \frac{\omega \delta^3}{1-\delta^2}  \Big)$ \\
+ L-LLH &       &       &       &       &       &       &       &       \\ 
+ L-LML &       &       &       &       &       &       &       &       \\ 
+ M-LML &       &       &       &       &       &       &       &       \\ 
+ M-LMM &       &       &       &       &       &       &       &       \\ 
+ H-LLH &       &       &       &       &       &       &       &       \\ 
+ H-LMH & & & & & &  & &                                                                \\ \hline 
+\end{tabular}
+}
+\caption{Payoff table of the supergame}
+\end{sidewaystable} % <-- HERE

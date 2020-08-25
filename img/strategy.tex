@@ -1,0 +1,35 @@
+%\documentclass[]{standalone}
+%\usepackage{tikz}
+%\usetikzlibrary{calc}
+%\begin{document}
+
+
+\begin{tikzpicture}
+\tikzstyle{dots}=[circle,draw=black,thick]
+\tikzstyle{lines1}=[->,line width=0.5mm,red,bend left=5]
+\tikzstyle{lines2}=[->,line width=0.5mm,blue,bend left=5]
+\tikzstyle{fixedp}=[->,dashed,line width=0.5mm,gray]
+
+\def\arrowhead{10mm}
+\fill[red!60,thick,dashed] (4,-1.1) circle (0.3cm);
+\fill[blue!60,thick,dashed] (0,-1.93) circle (0.35cm);
+\draw[shift={(0,-1.4)},color=black] node[dots,above] (aL){ $L $ };
+\draw[shift={(0,-2.4)},color=black] node[dots,above] (aM){ $M $ };
+\draw[shift={(0,-3.4)},color=black] node[dots,above] (aH){ $H $ };
+\draw[shift={(4,-1.1)},color=black] node[dots] (bL) { $L $ };
+\draw[shift={(4,-2.1)},color=black] node[dots] (bM) { $M $ };
+\draw[shift={(4,-3.1)},color=black] node[dots] (bH) { $H $ };
+
+
+\node[text=blue] at (0,0) {M-LMH};
+\node[text=red] at (4,0) {L-LLL};
+\draw[lines1] (aL) edge (bL);
+\draw[lines1] (aM) edge (bL);
+\draw[lines1] (aH) edge (bL);
+\draw[lines2] (bL) edge (aL);
+\draw[lines2] (bM) edge (aM);
+\draw[lines2] (bH) edge (aH);
+\draw[fixedp] (aL)++(-.4,+.4) rectangle ($ (bL) + (.4,-0.4) $);
+\end{tikzpicture}
+%\end{document}
+
